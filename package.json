@@ -1,10 +1,15 @@
 {
   "name": "topup-x-elite",
-  "version": "2.0.0",
-  "description": "TOPUP X ELITE — Free Fire top-up with admin, wallet, rewards, referral, order tracking.",
+  "version": "1.0.0",
+  "description": "TOPUP X ELITE - Free Fire Top-Up platform with full backend, admin panel, wallet and rewards",
   "main": "server/index.js",
-  "scripts": { "start": "node server/index.js", "seed": "node server/seed.js" },
-  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server/index.js",
+    "seed": "node server/seed.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "better-sqlite3": "^11.5.0",

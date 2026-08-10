@@ -1,281 +1,380 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#050608" />
-<title>TOPUP X ELITE — Fast Free Fire Top-Up</title>
-<meta name="description" content="TOPUP X ELITE offers instant Free Fire diamond top-up with secure bKash, Nagad & Rocket payments, daily rewards, cashback, wallet and full order tracking." />
-<meta name="robots" content="index,follow" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="TOPUP X ELITE" />
-<meta property="og:title" content="TOPUP X ELITE — Instant Free Fire Top-Up" />
-<meta property="og:description" content="Instant Free Fire diamond top-up with order tracking, wallet and rewards." />
-<meta property="og:image" content="/assets/og.svg" />
-<link rel="canonical" href="/" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<title>TOPUP X ELITE — Fast • Secure • Trusted Top-Up</title>
+<meta name="description" content="TOPUP X ELITE — Instant Free Fire diamond top-up with secure bKash, Nagad & Rocket payments, daily rewards, wallet and cashback." />
 <link rel="stylesheet" href="/css/styles.css" />
-</head><body>
-<div id="loadingScreen" class="loading-screen"><div><div class="gear"></div><div style="margin-top:18px;text-align:center;font-family:var(--font-display);letter-spacing:2px;color:var(--gold);font-weight:700">TOPUP X ELITE</div></div></div>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c542'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Arial' font-size='34' font-weight='800' fill='%231a1300'%3EX%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div id="loadingScreen" class="loading-screen">
+  <div>
+    <div class="gear"></div>
+    <div style="margin-top:18px;text-align:center;font-family:var(--font-display);letter-spacing:2px;color:var(--gold);font-weight:700">TOPUP X ELITE</div>
+  </div>
+</div>
+
+<!-- ============ TOASTS ============ -->
 <div id="toasts" class="toasts"></div>
+
+<!-- ============ TOP NAV ============ -->
 <header class="topnav">
-  <a href="#/" class="brand" data-nav="/"><div class="brand-logo">X</div><div><div class="brand-title">TOPUP <span class="x">X</span> ELITE</div><div class="brand-sub">Fast • Secure • Trusted</div></div></a>
+  <a href="#/" class="brand" data-nav="/">
+    <div class="brand-logo">X</div>
+    <div>
+      <div class="brand-title">TOPUP <span class="x">X</span> ELITE</div>
+      <div class="brand-sub">Fast • Secure • Trusted</div>
+    </div>
+  </a>
   <nav class="nav-links">
-    <a href="#/" data-nav="/">Home</a><a href="#/shop" data-nav="/shop">Shop</a>
-    <a href="#/track" data-nav="/track">Track</a><a href="#/rewards" data-nav="/rewards">Rewards</a>
-    <a href="#/contact" data-nav="/contact">Contact</a><a href="#/dashboard" data-nav="/dashboard">Account</a>
+    <a href="#/" data-nav="/">Home</a>
+    <a href="#/topup" data-nav="/topup">Top-Up</a>
+    <a href="#/track" data-nav="/track">Track Order</a>
+    <a href="#/rewards" data-nav="/rewards">Rewards</a>
+    <a href="#/wallet" data-nav="/wallet">Wallet</a>
+    <a href="#/dashboard" data-nav="/dashboard">Dashboard</a>
   </nav>
   <div class="nav-cta" id="navCta"></div>
 </header>
-<div id="noticeStrip" class="notice-strip hidden"></div>
+
 <main class="app">
 
-<section class="page" id="page-home" data-route="/">
-  <div class="hero"><div class="hero-content">
-    <span class="tag tag-gold pulse">🔥 Free Fire Top-Up</span>
-    <h1 id="heroTitle">Instant <span class="accent">Free Fire</span><br/>Diamond Top-Up</h1>
-    <p id="heroSub">Premium diamonds delivered to your account. Secure local payments, transparent pricing, real-time order tracking and a friendly wallet with cashback.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary btn-lg" href="#/shop" data-nav="/shop">🛒 Shop Now</a>
-      <a class="btn btn-lg" href="#/track" data-nav="/track">📦 Track My Order</a>
-      <a class="btn btn-ghost btn-lg" href="#/rewards" data-nav="/rewards">🎁 Rewards</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="num" data-count="2480">2,480+</div><div class="label">Orders Processed*</div></div>
-      <div class="stat"><div class="num" data-count="99">99%</div><div class="label">Completion Rate*</div></div>
-      <div class="stat"><div class="num" data-count="3">&lt; 3 min</div><div class="label">Avg. Confirmation*</div></div>
-      <div class="stat"><div class="num" data-count="1280">1,280+</div><div class="label">Players Served*</div></div>
-    </div>
-    <div class="alert warn" style="margin-top:18px;max-width:640px">⚠ <strong>Demo data shown.</strong> Stats, reviews, packages and payment numbers are placeholder content — replace every value from the <strong>Admin Panel</strong> before going public.</div>
-  </div></div>
-
-  <div class="container">
-    <div class="section"><div class="section-h"><div><h2>Popular Diamond Packages</h2><p>Hand-picked value packs across every budget — admin-controlled pricing.</p></div><a class="btn btn-sm" href="#/shop" data-nav="/shop">View All →</a></div>
-    <div id="popularPackages" class="grid grid-2 grid-4"></div></div>
-    <div class="section"><div class="section-h"><div><h2>Special Offers</h2><p>Discounted packs with admin-configurable stock.</p></div></div><div id="specialPackages" class="grid grid-2 grid-3"></div></div>
-    <div class="section"><div class="section-h"><div><h2>How It Works</h2><p>Four steps: pick, pay, submit, track. No login required to top up, login unlocks wallet & rewards.</p></div></div>
-      <div class="grid grid-2 grid-4">
-        <div class="card why-card"><div class="why-icon">1</div><h3>Pick a Package</h3><p>Browse Free Fire diamonds and bundles. Choose a popular pack or build a custom amount.</p></div>
-        <div class="card why-card"><div class="why-icon">2</div><h3>Send Payment</h3><p>Pay via bKash, Nagad or Rocket. Numbers and instructions come from the Admin Panel.</p></div>
-        <div class="card why-card"><div class="why-icon">3</div><h3>Submit Details</h3><p>Enter your UID, Server ID, payment method and Trx ID. Get an instant Order ID.</p></div>
-        <div class="card why-card"><div class="why-icon">4</div><h3>Receive Diamonds</h3><p>Track your order live. Admin verifies payment and delivers diamonds to your account.</p></div>
+  <!-- HOME -->
+  <section class="page" id="page-home" data-route="/">
+    <div class="hero">
+      <div class="hero-content">
+        <span class="tag tag-gold pulse">🔥 Personal Top-Up Platform</span>
+        <h1>Instant <span class="accent">Free Fire</span><br/>Diamond Top-Up</h1>
+        <p>Top up diamonds directly to your account in minutes — secure bKash, Nagad & Rocket payments, wallet rewards, cashback, and a full order tracking system. Built for players who want speed, safety and clarity.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" data-nav="/topup">🛒 Shop Now</button>
+          <button class="btn" data-nav="/track">📦 Track My Order</button>
+          <button class="btn btn-ghost" data-nav="/rewards">🎁 Rewards</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="num" data-count="0" data-target="2480" data-suffix="+">0+</div><div class="label">Orders Processed</div></div>
+          <div class="stat"><div class="num" data-count="0" data-target="99" data-suffix="%">0%</div><div class="label">Completion Rate</div></div>
+          <div class="stat"><div class="num" data-count="0" data-target="3" data-suffix=" min">0 min</div><div class="label">Average Delivery</div></div>
+          <div class="stat"><div class="num" data-count="0" data-target="1280" data-suffix="+">0+</div><div class="label">Active Players</div></div>
+        </div>
+        <div class="alert warn" style="margin-top:18px;max-width:640px">
+          ⚠ <strong>Demo data shown.</strong> Site stats, reviews, payments and prices are placeholder content — replace every value from the <strong>Admin Panel</strong> before going public.
+        </div>
       </div>
     </div>
-    <div class="section"><div class="section-h"><div><h2>Why Choose TOPUP X ELITE</h2><p>Premium, transparent and built around clarity. No false claims.</p></div></div>
-      <div class="grid grid-2 grid-4">
-        <div class="card why-card"><div class="why-icon">⚡</div><h3>Lightning Verification</h3><p>Most orders verified within minutes during business hours.</p></div>
-        <div class="card why-card"><div class="why-icon">🔒</div><h3>Secure Payment</h3><p>Local channels only. Never share PINs or sign-in info with anyone — including support.</p></div>
-        <div class="card why-card"><div class="why-icon">💎</div><h3>Transparent Pricing</h3><p>Public prices are admin-controlled — no hidden fees.</p></div>
-        <div class="card why-card"><div class="why-icon">🎁</div><h3>Rewards & Cashback</h3><p>Daily bonus, 5% cashback on completion and a lucky spin every 24h.</p></div>
-        <div class="card why-card"><div class="why-icon">📦</div><h3>Order Tracking</h3><p>Unique Order ID lets you check status any time, anywhere.</p></div>
-        <div class="card why-card"><div class="why-icon">🛡️</div><h3>Account Safety</h3><p>We only ask for your UID, Server ID and payment proof.</p></div>
-        <div class="card why-card"><div class="why-icon">💬</div><h3>Clear Communication</h3><p>Order notes and push notifications keep you informed.</p></div>
-        <div class="card why-card"><div class="why-icon">🌐</div><h3>Mobile First</h3><p>Designed for Android phones with sticky bottom nav.</p></div>
+
+    <div class="container">
+      <div class="section" id="featuredSection">
+        <div class="flex" style="justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:8px">
+          <h2>Featured Diamond Packages</h2>
+          <button class="btn btn-sm" data-nav="/topup">View All →</button>
+        </div>
+        <p class="lead">Hand-picked packages across every budget. Custom packages are also supported.</p>
+        <div id="featuredPackages" class="grid grid-2 grid-4"></div>
       </div>
-    </div>
-    <div class="section"><div class="section-h"><div><h2>Frequently Asked Questions</h2></div></div>
-      <div class="card" style="padding:8px 20px">
-        <div class="faq-item open"><div class="faq-q">How fast will my order complete? <span class="plus">+</span></div><div class="faq-a">Most orders verified within minutes during business hours. You can always track live status with your Order ID.</div></div>
-        <div class="faq-item"><div class="faq-q">Do I need to share my Free Fire password? <span class="plus">+</span></div><div class="faq-a">No — we only need your Player UID and Server ID. Never share your account password with anyone.</div></div>
-        <div class="faq-item"><div class="faq-q">Which payment methods are supported? <span class="plus">+</span></div><div class="faq-a">bKash, Nagad and Rocket. Numbers and instructions are configured from Admin Panel.</div></div>
-        <div class="faq-item"><div class="faq-q">What if my payment succeeds but the order stays pending? <span class="plus">+</span></div><div class="faq-a">Track the Order ID any time. Admins verify the TrxID manually and update status.</div></div>
-        <div class="faq-item"><div class="faq-q">Are wallet rewards real money? <span class="plus">+</span></div><div class="faq-a">No — the wallet holds in-app value usable for ordering diamonds. Adjust withdrawal wording from Admin before going live.</div></div>
-        <div class="faq-item"><div class="faq-q">Is this an official Garena partner? <span class="plus">+</span></div><div class="faq-a"><strong>No.</strong> TOPUP X ELITE is an independent third-party service. We do not claim or imply any official partnership with Garena or Free Fire publishers.</div></div>
+
+      <div class="section">
+        <h2>Why Choose TOPUP X ELITE</h2>
+        <p class="leading muted" style="margin-bottom:24px;color:var(--text-dim)">A premium player-first top-up experience, designed for transparency and speed.</p>
+        <div class="grid grid-2 grid-4">
+          <div class="card why-card"><div class="why-icon">⚡</div><h3>Instant Delivery</h3><p>Most orders complete within minutes — no long waits or hidden queues.</p></div>
+          <div class="card why-card"><div class="why-icon">🔒</div><h3>Secure Payments</h3><p>Local bKash, Nagad & Rocket channels. Never share PIN or password with anyone.</p></div>
+          <div class="card why-card"><div class="why-icon">💎</div><h3>Transparent Pricing</h3><p>Every package's price is editable from the admin panel — no surprises.</p></div>
+          <div class="card why-card"><div class="why-icon">🎁</div><h3>Rewards & Cashback</h3><p>Daily bonus, lucky spin and 5% cashback on completed orders.</p></div>
+          <div class="card why-card"><div class="why-icon">📦</div><h3>Order Tracking</h3><p>Each order gets a unique Order ID — track its status any time, anywhere.</p></div>
+          <div class="card why-card"><div class="why-icon">🛡️</div><h3>Account Safety</h3><p>You only provide your Player UID, Server ID and payment proof — no login required.</p></div>
+          <div class="card why-card"><div class="why-icon">💬</div><h3>Real Support</h3><p>In-app order status updates and a public status page keep communication clear.</p></div>
+          <div class="card why-card"><div class="why-icon">🌐</div><h3>Mobile First</h3><p>Designed mobile-first with bottom navigation and offline-friendly UX.</p></div>
+        </div>
       </div>
+
+      <div class="section">
+        <h2>Customer Reviews</h2>
+        <p class="lead" style="margin-bottom:24px">Reviews below are <strong>sample showcase text</strong> — replace them with real ones from your customers. Stats and naming are all editable from the Admin Panel.</p>
+        <div id="reviewsGrid" class="grid grid-2 grid-3">
+          <div class="card review"><div class="name">Arif H. <span class="badge">Verified</span></div><div class="meta">Dhaka • 3 days ago</div><div class="stars">★★★★★</div><div class="quote">"Order was completed in under 5 minutes. The order tracking page made it easy to follow along — no back-and-forth messages needed."</div></div>
+          <div class="card review"><div class="name">Nafisa R. <span class="badge">Verified</span></div><div class="meta">Chattogram • last week</div><div class="stars">★★★★★</div><div class="quote">"I liked the clean UI and the cashback feature. The bKash payment instructions were very clear."</div></div>
+          <div class="card review"><div class="name">Sabbir K. <span class="badge">Verified</span></div><div class="meta">Sylhet • this month</div><div class="stars">★★★★☆</div><div class="quote">"Lucky spin was a fun surprise. Wish there were even more large diamond packs — but the 1090 + 2180 are great values."</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="card" style="padding:6px 18px">
+          <div class="faq-item open">
+            <div class="faq-q">How fast will my order complete? <span class="plus">+</span></div>
+            <div class="faq-a">Most orders are checked and processed within minutes. You can always track live status using your Order ID.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Do I need to share my Free Fire password? <span class="plus">+</span></div>
+            <div class="faq-a">No — you only need to provide your Player UID and Server ID. Never share your account password with anyone, including support staff.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Which payment methods are supported? <span class="plus">+</span></div>
+            <div class="faq-a">bKash, Nagad and Rocket. Payment numbers and instructions are configurable from the admin panel — always read them on the order page before paying.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What if my payment succeeds but the order stays pending? <span class="plus">+</span></div>
+            <div class="faq-a">Use the Order Tracking page with your Order ID. Admins update status manually after verifying the transaction reference. If something is wrong, contact support.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Are wallet rewards real money? <span class="plus">+</span></div>
+            <div class="faq-a">The wallet is an in-app balance for ordering diamonds and rewarding engagement. Real money in/out is only available once a real payment gateway is connected.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="page" id="page-shop" data-route="/shop">
-  <div class="container section">
-    <div class="section-h"><div><h2>Diamond Shop</h2><p>Browse all packages. Pricing, stock and popular status are admin-managed.</p></div>
-      <input class="input" id="shopSearch" placeholder="Search packages…" style="max-width:240px"/>
-    </div>
-    <div id="shopGrid" class="grid grid-2 grid-4"></div>
-  </div>
-</section>
+  <!-- TOP-UP / PACKAGES -->
+  <section class="page" id="page-topup" data-route="/topup">
+    <div class="container section">
+      <h2>Diamond Packages</h2>
+      <p class="lead">All prices are editable from the Admin Panel. Click a package to start an order — or build a Custom Package below.</p>
+      <div id="allPackages" class="grid grid-2 grid-3"></div>
 
-<section class="page" id="page-package" data-route="/package">
-  <div class="container section"><div id="packageDetail"></div></div>
-</section>
-
-<section class="page" id="page-order" data-route="/order">
-  <div class="container section">
-    <div class="section-h"><div><h2 id="orderFormTitle">Place Your Order</h2><p id="orderFormSub">Fill in your details carefully. Get an instant Order ID on submit.</p></div></div>
-    <div class="grid grid-2">
-      <div class="card">
-        <h3 class="card-title">1. Your Order</h3>
-        <div class="field"><label>Selected Package</label><div id="orderPkgSummary" class="alert info" style="margin-bottom:6px">No package selected yet</div></div>
+      <div class="card mt-24">
+        <h3 style="font-family:var(--font-display);letter-spacing:0.5px;margin:0 0 6px">🛠 Build a Custom Package</h3>
+        <p class="muted" style="margin:0 0 14px;font-size:13px">Pricing is auto-calculated at cost per diamond (editable default rate, demos use 0.78). Final pricing is set after admin review.</p>
         <div class="row row-2">
-          <div class="field"><label>Free Fire UID <span class="req">*</span></label><input class="input" id="playerUid" placeholder="e.g. 1234567890" inputmode="numeric" /><div class="hint">In Free Fire, Profile shows your UID.</div></div>
-          <div class="field"><label>Server ID (optional)</label><input class="input" id="serverId" placeholder="e.g. 2001" /></div>
+          <div class="field">
+            <label>Custom Diamonds</label>
+            <input type="number" min="1" max="100000" value="500" class="input" id="customDiamonds" />
+            <div class="hint">Min 1 — Max 100,000</div>
+          </div>
+          <div class="field">
+            <label>Estimated Price</label>
+            <input class="input" id="customPricePreview" readonly value="—" />
+            <div class="hint">Demo rate; admins can adjust pricing per package.</div>
+          </div>
         </div>
-        <div class="field"><label>Phone Number <span class="req">*</span></label><input class="input" id="customerPhone" placeholder="01XXXXXXXXX" inputmode="numeric" /></div>
-        <div class="field"><label>Order Note (optional)</label><textarea class="input" id="orderNote" rows="2" placeholder="Anything we should know?"></textarea></div>
-        <div id="loginNudge" class="alert warn hidden">You need an account to place an order. <a href="#" id="loginNudgeLink" style="color:var(--gold);font-weight:700">Login / Register →</a></div>
+        <button class="btn btn-primary" id="customOrderBtn">Order Custom Package →</button>
       </div>
-      <div class="card">
-        <h3 class="card-title">2. Payment Method</h3>
-        <div id="paymentMethods" class="grid grid-2" style="gap:10px"></div>
-        <div id="payInstrBox" class="alert info mt-12" style="display:none"></div>
-        <div class="field mt-16" id="trxField" style="display:none">
-          <label>Your Transaction ID <span class="req">*</span></label>
-          <input class="input" id="trxId" placeholder="e.g. 8N5KJD92X3" />
-          <div class="hint">After paying to the admin-set number, enter the TrxID here.</div>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section class="page" id="page-place-order" data-route="/order">
+    <div class="container section">
+      <h2 id="orderFormTitle">Place Your Order</h2>
+      <p class="lead" id="orderFormSub">Fill in your details carefully. Delivery is faster when UID and payment info are accurate.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 style="font-family:var(--font-display);margin:0 0 8px">1. Your Order</h3>
+          <div class="field">
+            <label>Selected Package</label>
+            <div id="orderPkgSummary" class="alert info" style="margin-bottom:6px">No package selected yet</div>
+          </div>
+          <div class="row row-2">
+            <div class="field"><label>Player UID <span class="muted">*</span></label>
+              <input class="input" id="playerUid" placeholder="e.g. 1234567890" inputmode="numeric" />
+              <div class="hint">Open Free Fire → Profile → copy your UID.</div>
+            </div>
+            <div class="field"><label>Server ID</label>
+              <input class="input" id="serverId" placeholder="e.g. 2001 (optional)" />
+            </div>
+          </div>
+          <div class="field"><label>Phone Number <span class="muted">*</span></label>
+            <input class="input" id="customerPhone" placeholder="01XXXXXXXXX" inputmode="numeric" />
+          </div>
+          <div class="field"><label>Order Note (optional)</label>
+            <textarea class="input textarea" id="orderNote" rows="2" placeholder="Anything we should know?"></textarea>
+          </div>
+          <div id="loginNudge" class="alert warn hidden">You need an account to place an order. <a href="#" id="loginNudgeLink" style="color:var(--gold);font-weight:700">Login / Register →</a></div>
         </div>
-        <div class="alert warn mt-12" style="font-size:12px">⚠ Manual fulfillment mode — admin verifies payment before delivery.</div>
-        <button class="btn btn-primary btn-block mt-16" id="submitOrderBtn">🚀 Submit Order</button>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="page" id="page-order-success" data-route="/order-success">
-  <div class="container section"><div style="max-width:720px;margin:0 auto"><div class="card text-center">
-    <div style="font-size:64px">✅</div>
-    <h2 style="font-family:var(--font-display);margin:0 0 8px">Order Received Successfully</h2>
-    <p class="muted">Save your Order ID below. Admin will verify payment and update the status — you can re-check any time from the Track Order page.</p>
-    <div id="successBox" class="mt-16"></div>
-    <div class="flex gap-12 mt-24" style="justify-content:center;flex-wrap:wrap">
-      <a class="btn btn-primary" href="#/track" data-nav="/track">📦 Track This Order</a>
-      <a class="btn" href="#/shop" data-nav="/shop">Shop More</a>
-      <a class="btn" href="#/dashboard" data-nav="/dashboard">My Account</a>
-    </div>
-  </div></div></div>
-</section>
+        <div class="card">
+          <h3 style="font-family:var(--font-display);margin:0 0 8px">2. Payment Method</h3>
+          <div id="paymentMethods" class="grid grid-2" style="gap:10px"></div>
 
-<section class="page" id="page-track" data-route="/track">
-  <div class="container section">
-    <div class="section-h"><div><h2>Track Your Order</h2><p>Enter your Order ID (format: TXE-YYYYMMDD-NNNN) to see live status.</p></div></div>
-    <div class="card" style="max-width:520px">
-      <div class="field"><label>Order ID</label><input class="input" id="trackInput" placeholder="TXE-YYYYMMDD-NNNN" /></div>
-      <button class="btn btn-primary btn-block" id="trackBtn">🔎 Track Order</button>
-    </div>
-    <div id="trackResult" class="mt-16"></div>
-  </div>
-</section>
+          <div id="payInstrBox" class="alert info mt-12" style="display:none"></div>
 
-<section class="page" id="page-login" data-route="/login">
-  <div class="container section">
-    <div class="grid grid-2" style="max-width:920px;margin:0 auto">
-      <div class="card"><h2 class="card-title">Login</h2>
-        <div class="field"><label>Username or Email</label><input class="input" id="loginId" autocomplete="username" placeholder="username or email"/></div>
-        <div class="field"><label>Password</label><input class="input" id="loginPassword" autocomplete="current-password" type="password" placeholder="••••••••"/></div>
-        <button class="btn btn-primary btn-block" id="loginBtn">⚡ Login</button>
-        <p class="muted text-center mt-12" style="font-size:13px"><a href="#/forgot" data-nav="/forgot" style="color:var(--gold);font-weight:600">Forgot password?</a></p>
-      </div>
-      <div class="card"><h2 class="card-title">Create Account</h2>
-        <p class="muted" style="margin:0 0 14px">Sign up to earn daily rewards, track your orders automatically, and use the wallet.</p>
-        <div class="row row-2"><div class="field"><label>Username</label><input class="input" id="regUsername" autocomplete="username" placeholder="coolplayer99"/></div>
-        <div class="field"><label>Email</label><input class="input" id="regEmail" type="email" autocomplete="email" placeholder="you@example.com"/></div></div>
-        <div class="field"><label>Phone (optional)</label><input class="input" id="regPhone" placeholder="01XXXXXXXXX"/></div>
-        <div class="field"><label>Password (min 6 chars)</label><input class="input" id="regPassword" type="password" autocomplete="new-password" placeholder="••••••••"/></div>
-        <div class="field"><label>Referral Code (optional)</label><input class="input" id="regReferral" placeholder="e.g. TXEAR-XXXX"/></div>
-        <button class="btn btn-primary btn-block" id="regBtn">🚀 Create Account</button>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="field mt-16" id="trxField" style="display:none">
+            <label>Your Transaction ID <span class="muted">*</span></label>
+            <input class="input" id="trxId" placeholder="e.g. 8N5KJD92X3" />
+            <div class="hint">After paying to the account shown above, enter the Transaction ID you received.</div>
+          </div>
 
-<section class="page" id="page-register" data-route="/register">
-  <div class="container section"><div class="card" style="max-width:560px;margin:0 auto">
-    <h2 class="card-title">Create your account</h2>
-    <p class="muted" style="margin:0 0 14px">Earn daily rewards, get a referral code and use the wallet.</p>
-    <div class="row row-2"><div class="field"><label>Username</label><input class="input" id="regUsername2" autocomplete="username" placeholder="coolplayer99"/></div>
-    <div class="field"><label>Email</label><input class="input" id="regEmail2" type="email" autocomplete="email" placeholder="you@example.com"/></div></div>
-    <div class="field"><label>Phone (optional)</label><input class="input" id="regPhone2" placeholder="01XXXXXXXXX"/></div>
-    <div class="field"><label>Password (min 6 chars)</label><input class="input" id="regPassword2" type="password" autocomplete="new-password" placeholder="••••••••"/></div>
-    <div class="field"><label>Referral Code (optional)</label><input class="input" id="regReferral2" placeholder="e.g. TXEAR-XXXX"/></div>
-    <button class="btn btn-primary btn-block" id="regBtn2">🚀 Create Account</button>
-  </div></div>
-</section>
-
-<section class="page" id="page-forgot" data-route="/forgot">
-  <div class="container section"><div class="card" style="max-width:520px;margin:0 auto">
-    <h2 class="card-title">Forgot Password</h2>
-    <p class="muted" style="margin:0 0 14px">Enter your email or username. We will generate a reset token (demo).</p>
-    <div class="field"><label>Email or Username</label><input class="input" id="fpId" placeholder="email or username"/></div>
-    <button class="btn btn-primary btn-block" id="fpBtn">📩 Request Reset Token</button>
-    <div id="fpResult" class="mt-16"></div>
-  </div></div>
-</section>
-
-<section class="page" id="page-dashboard" data-route="/dashboard">
-  <div class="container section"><div class="section-h"><div><h2>My Dashboard</h2><p>Account, wallet balance and recent orders.</p></div></div><div id="dashboardContent">Loading…</div></div>
-</section>
-
-<section class="page" id="page-orders" data-route="/orders">
-  <div class="container section"><div class="section-h"><div><h2>My Orders</h2></div></div><div id="ordersList"></div></div>
-</section>
-
-<section class="page" id="page-order-detail" data-route="/order-detail"><div class="container section" id="orderDetailContainer"></div></section>
-
-<section class="page" id="page-wallet" data-route="/wallet">
-  <div class="container section"><div class="section-h"><div><h2>Wallet</h2><p>In-app balance for top-ups, cashback, daily bonus and lucky spin.</p></div></div><div id="walletContent">Loading…</div></div>
-</section>
-
-<section class="page" id="page-rewards" data-route="/rewards">
-  <div class="container section">
-    <div class="section-h"><div><h2>Rewards & Bonuses</h2><p>Daily bonus, 5% cashback on completion, referrals and the Lucky Spin.</p></div></div>
-    <div class="grid grid-2 grid-3">
-      <div class="card"><h3 class="card-title">🌅 Daily Bonus</h3><p class="muted" style="font-size:13px">Claim once per 24h.</p><button class="btn btn-primary btn-block mt-12" id="dailyClaimBtn">🎁 Claim Daily Bonus</button></div>
-      <div class="card"><h3 class="card-title">💸 Cashback</h3><p class="muted" style="font-size:13px">Auto-credited when an order reaches <strong>Completed</strong>.</p><a class="btn btn-block mt-12" href="#/orders" data-nav="/orders">My Orders →</a></div>
-      <div class="card"><h3 class="card-title">👥 Referrals</h3><p class="muted" style="font-size:13px">Invite friends and both earn the bonus.</p><a class="btn btn-block mt-12" href="#/dashboard" data-nav="/dashboard">Find My Code →</a></div>
-    </div>
-    <div class="card mt-24" style="max-width:520px;margin-left:auto;margin-right:auto;text-align:center">
-      <h3 class="card-title">🎡 Lucky Spin</h3><p class="muted" style="font-size:13px">Once every 24 hours. Tier weights editable from Admin.</p>
-      <div class="wheel-wrap mt-16">
-        <div class="wheel-pointer"></div>
-        <div class="wheel" id="wheel">
-          <div style="position:absolute;inset:14px;border-radius:50%;background:conic-gradient(#f5c542 0deg 45deg,#25e1ff 45deg 90deg,#a072ff 90deg 135deg,#25d97a 135deg 180deg,#ff5577 180deg 225deg,#ffae3d 225deg 270deg,#57b8ff 270deg 315deg,#ffdf6b 315deg 360deg);opacity:.55"></div>
-          <div class="wheel-center" id="spinBtn">SPIN</div>
+          <button class="btn btn-primary btn-block mt-16" id="submitOrderBtn">🚀 Confirm Order</button>
+          <p class="muted text-center mt-12" style="font-size:12px">By placing an order you confirm that the payment details are correct.</p>
         </div>
       </div>
-      <div id="spinResult" class="alert info text-center mt-16">Tap SPIN to try your luck.</div>
     </div>
-    <div class="card mt-24"><h3 class="card-title">My Reward History</h3><div id="rewardsHistory">Sign in to see your rewards.</div></div>
-  </div>
-</section>
+  </section>
 
-<section class="page" id="page-referral" data-route="/referral">
-  <div class="container section"><div class="section-h"><div><h2>Referral Program</h2><p>Share your code — admin-configured bonus for both sides.</p></div></div><div id="referralContent">Loading…</div></div>
-</section>
+  <!-- TRACK -->
+  <section class="page" id="page-track" data-route="/track">
+    <div class="container section">
+      <h2>Track Your Order</h2>
+      <p class="lead">Enter your Order ID to see live status. No login required.</p>
+      <div class="card" style="max-width:520px">
+        <div class="field">
+          <label>Order ID</label>
+          <input class="input" id="trackInput" placeholder="TXE-XXXXXX-XXXXX" />
+        </div>
+        <button class="btn btn-primary btn-block" id="trackBtn">🔎 Track Order</button>
+      </div>
+      <div id="trackResult" class="mt-16" style="max-width:720px"></div>
+    </div>
+  </section>
 
-<section class="page" id="page-profile" data-route="/profile">
-  <div class="container section"><div class="section-h"><div><h2>My Profile</h2><p>Account details and security.</p></div></div><div id="profileContent">Loading…</div></div>
-</section>
-
-<section class="page" id="page-contact" data-route="/contact">
-  <div class="container section">
-    <div class="section-h"><div><h2>Contact & Support</h2><p>Reach out via email, phone or social — admin-editable.</p></div></div>
-    <div class="grid grid-2">
-      <div class="card"><h3 class="card-title">Contact</h3><div id="contactBlock"><div class="muted">Loading…</div></div></div>
-      <div class="card"><h3 class="card-title">FAQ</h3>
-        <div class="faq-item open"><div class="faq-q">Is this an official Garena partner? <span class="plus">+</span></div><div class="faq-a"><strong>No.</strong> TOPUP X ELITE is an independent third-party service.</div></div>
-        <div class="faq-item"><div class="faq-q">How do I contact support? <span class="plus">+</span></div><div class="faq-a">Email and phone shown on the side are admin-configured. Order queries should include the Order ID.</div></div>
+  <!-- LOGIN / REGISTER -->
+  <section class="page" id="page-auth" data-route="/auth">
+    <div class="container section">
+      <div class="grid grid-2" style="max-width:920px;margin:0 auto">
+        <div class="card">
+          <h2 style="margin:0 0 6px">Login</h2>
+          <p class="muted" style="margin:0 0 14px">Welcome back. Sign in to track your orders and use the wallet.</p>
+          <div class="field"><label>Username or Email</label><input class="input" id="loginId" placeholder="username or email" /></div>
+          <div class="field"><label>Password</label><input class="input" id="loginPassword" type="password" placeholder="••••••••" /></div>
+          <button class="btn btn-primary btn-block" id="loginBtn">⚡ Login</button>
+        </div>
+        <div class="card">
+          <h2 style="margin:0 0 6px">Create Account</h2>
+          <p class="muted" style="margin:0 0 14px">Sign up to earn daily rewards and track your orders automatically.</p>
+          <div class="field"><label>Username</label><input class="input" id="regUsername" placeholder="coolplayer99" /></div>
+          <div class="field"><label>Email</label><input class="input" id="regEmail" type="email" placeholder="you@example.com" /></div>
+          <div class="field"><label>Phone (optional)</label><input class="input" id="regPhone" placeholder="01XXXXXXXXX" /></div>
+          <div class="field"><label>Password (min 6 chars)</label><input class="input" id="regPassword" type="password" placeholder="••••••••" /></div>
+          <div class="field"><label>Referral Code (optional)</label><input class="input" id="regReferral" placeholder="e.g. ARIF-A4B7C1" /></div>
+          <button class="btn btn-primary btn-block" id="regBtn">🚀 Create Account</button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="page" id="page-admin" data-route="/admin">
-  <div class="container section"><div class="section-h"><div><h2>🛡 Admin Dashboard</h2><p>Manage orders, packages, payments, users, wallets, rewards and site settings.</p></div></div><div id="adminGuard" class="alert warn">Checking access…</div><div id="adminContent" class="hidden"></div></div>
-</section>
+  <!-- DASHBOARD -->
+  <section class="page" id="page-dashboard" data-route="/dashboard">
+    <div class="container section">
+      <h2>My Dashboard</h2>
+      <p class="lead">Quick overview of your account, wallet balance and recent orders.</p>
+      <div id="dashboardContent">Loading your dashboard…</div>
+    </div>
+  </section>
 
-<footer class="footer"><div class="container"><div class="cols">
-  <div><div class="brand" style="margin-bottom:8px"><div class="brand-logo">X</div><div><div class="brand-title">TOPUP <span class="x">X</span> ELITE</div><div class="brand-sub">Fast • Secure • Trusted</div></div></div>
-  <p style="max-width:380px;margin-top:8px">A premium Free Fire diamond top-up platform with secure local payments, wallet rewards and full order transparency. Every value is editable from the Admin Panel.</p>
-  <div class="alert warn mt-12" style="max-width:380px">⚠ Demo content shown. Replace payment numbers, banners, reviews and stats before going live.</div></div>
-  <div><h4>Explore</h4><a href="#/" data-nav="/">Home</a><br/><a href="#/shop" data-nav="/shop">Shop</a><br/><a href="#/track" data-nav="/track">Track</a><br/><a href="#/rewards" data-nav="/rewards">Rewards</a></div>
-  <div><h4>Account</h4><a href="#/login" data-nav="/login">Login</a><br/><a href="#/register" data-nav="/register">Register</a><br/><a href="#/dashboard" data-nav="/dashboard">Dashboard</a><br/><a href="#/wallet" data-nav="/wallet">Wallet</a><br/><a href="#/orders" data-nav="/orders">My Orders</a></div>
-  <div><h4>Admin</h4><a href="#/admin" data-nav="/admin">Admin Panel</a><br/><span class="muted">Demo: admin@topupxelite.local<br/>pwd: Admin@ChangeMe123</span></div>
-</div><div class="divider"></div><div style="text-align:center">© <span id="year"></span> TOPUP X ELITE. Manual fulfillment demo — connect a real top-up provider before going live with real money.</div></div></footer>
+  <!-- ORDERS HISTORY -->
+  <section class="page" id="page-orders" data-route="/orders">
+    <div class="container section">
+      <h2>Order History</h2>
+      <p class="lead">All your top-up orders. Click any to see its current status.</p>
+      <div id="ordersList"></div>
+    </div>
+  </section>
+
+  <!-- WALLET -->
+  <section class="page" id="page-wallet" data-route="/wallet">
+    <div class="container section">
+      <h2>Wallet</h2>
+      <p class="lead">Your in-app balance — use it for top-ups, earn cashback, daily rewards and lucky spins.</p>
+      <div id="walletContent">Loading your wallet…</div>
+    </div>
+  </section>
+
+  <!-- REWARDS -->
+  <section class="page" id="page-rewards" data-route="/rewards">
+    <div class="container section">
+      <h2>Rewards & Bonuses</h2>
+      <p class="lead">Daily login bonus, cashback on completed orders, referral rewards and the daily Lucky Spin.</p>
+      <div class="grid grid-2 grid-3">
+        <div class="card">
+          <h3 style="font-family:var(--font-display);margin:0 0 6px">🌅 Daily Bonus</h3>
+          <p class="muted" style="font-size:13px">Claim once per day. Adds a small amount to your wallet.</p>
+          <div id="dailyHint" class="alert info mt-12">Tap to check availability.</div>
+          <button class="btn btn-primary btn-block mt-12" id="dailyClaimBtn">🎁 Claim Today</button>
+        </div>
+        <div class="card">
+          <h3 style="font-family:var(--font-display);margin:0 0 6px">💸 Cashback</h3>
+          <p class="muted" style="font-size:13px">Earn 5% cashback on every completed order. Claim from Order History.</p>
+          <button class="btn btn-block mt-12" data-nav="/orders">Go to My Orders →</button>
+        </div>
+        <div class="card">
+          <h3 style="font-family:var(--font-display);margin:0 0 6px">👥 Referrals</h3>
+          <p class="muted" style="font-size:13px">Share your code in the dashboard to invite friends.</p>
+          <button class="btn btn-block mt-12" data-nav="/dashboard">Find My Code →</button>
+        </div>
+      </div>
+
+      <div class="card mt-24" style="max-width:520px;margin-left:auto;margin-right:auto">
+        <h3 style="font-family:var(--font-display);margin:0 0 6px;text-align:center">🎡 Lucky Spin</h3>
+        <p class="muted text-center" style="font-size:13px">Spin once every 24 hours. Demo weights — edit from Admin → Site Settings.</p>
+        <div class="wheel-wrap mt-16">
+          <div class="wheel-pointer"></div>
+          <div class="wheel" id="wheel">
+            <div style="position:absolute;inset:14px;border-radius:50%;background:conic-gradient(#f5c542 0deg 45deg,#25e1ff 45deg 90deg,#a072ff 90deg 135deg,#25d97a 135deg 180deg,#ff5577 180deg 225deg,#ffae3d 225deg 270deg,#57b8ff 270deg 315deg,#ffdf6b 315deg 360deg);opacity:0.55"></div>
+            <div class="wheel-center" id="spinBtn">SPIN</div>
+          </div>
+        </div>
+        <div id="spinResult" class="alert info text-center mt-16">Tap SPIN to try your luck.</div>
+      </div>
+
+      <div class="card mt-24">
+        <h3 style="font-family:var(--font-display);margin:0 0 8px">Reward History</h3>
+        <div id="rewardsHistory">Sign in to see your rewards.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN -->
+  <section class="page" id="page-admin" data-route="/admin">
+    <div class="container section">
+      <h2>🛡 Admin Panel</h2>
+      <p class="lead">Manage orders, packages, payments, banners and site content. Admin role required.</p>
+      <div id="adminGuard" class="alert warn">Checking access…</div>
+      <div id="adminContent" class="hidden"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <div class="brand" style="margin-bottom:8px"><div class="brand-logo">X</div><div><div class="brand-title">TOPUP <span class="x">X</span> ELITE</div><div class="brand-sub">Fast • Secure • Trusted</div></div></div>
+          <p style="max-width:380px">A premium Free Fire diamond top-up platform with secure local payments, wallet rewards and full order transparency. All prices, payment accounts and content are managed from the Admin Panel.</p>
+          <div class="alert warn mt-12" style="max-width:380px">⚠ Demo content shown. Replace payment numbers, reviews and site content from the Admin Panel before going live.</div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="#/" data-nav="/">Home</a><br/>
+          <a href="#/topup" data-nav="/topup">Top-Up</a><br/>
+          <a href="#/track" data-nav="/track">Track Order</a><br/>
+          <a href="#/rewards" data-nav="/rewards">Rewards</a>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <a href="#/auth" data-nav="/auth">Login / Register</a><br/>
+          <a href="#/dashboard" data-nav="/dashboard">Dashboard</a><br/>
+          <a href="#/wallet" data-nav="/wallet">Wallet</a><br/>
+          <a href="#/orders" data-nav="/orders">Order History</a>
+        </div>
+        <div>
+          <h4>Admin</h4>
+          <a href="#/admin" data-nav="/admin">Admin Panel</a><br/>
+          <span class="muted">Admin login is configured privately through your server environment. Never publish admin credentials.</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div style="text-align:center">© <span id="year"></span> TOPUP X ELITE. Demo platform — every value is editable from the Admin Panel.</div>
+    </div>
+  </footer>
 
 </main>
+
+<!-- ============ BOTTOM NAV ============ -->
 <nav class="bottomnav" id="bottomNav">
   <a class="bn-item" href="#/" data-nav="/"><span class="ic">🏠</span><span>Home</span></a>
-  <a class="bn-item" href="#/shop" data-nav="/shop"><span class="ic">💎</span><span>Shop</span></a>
+  <a class="bn-item" href="#/topup" data-nav="/topup"><span class="ic">💎</span><span>Top-Up</span></a>
   <a class="bn-item" href="#/track" data-nav="/track"><span class="ic">📦</span><span>Track</span></a>
-  <a class="bn-item" href="#/rewards" data-nav="/rewards"><span class="ic">🎁</span><span>Rewards</span></a>
+  <a class="bn-item" href="#/wallet" data-nav="/wallet"><span class="ic">💰</span><span>Wallet</span></a>
   <a class="bn-item" href="#/dashboard" data-nav="/dashboard"><span class="ic">👤</span><span>Account</span></a>
 </nav>
+
 <script src="/js/app.js"></script>
-</body></html>
+</body>
+</html>
