@@ -11,6 +11,7 @@ app.use(express.json({ limit: '256kb' }));
 app.use(express.urlencoded({ extended: true, limit: '256kb' }));
 app.use(cookieParser());
 
+// Login rate limit
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 30,
@@ -33,7 +34,6 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api/auth', require('./auth'));
 app.use('/api/packages', require('./packages'));
 app.use('/api/orders', require('./orders'));
 app.use('/api/wallet', require('./wallet'));
